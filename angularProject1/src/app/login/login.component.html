@@ -1,0 +1,25 @@
+<h3>Login Form</h3>
+<div class="container">
+  <div class="col-md-6">
+    <form #regForm='ngForm' (ngSubmit)='loginDetails(regForm)'>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input #emailInp='ngModel' name="emailInp" type="email" class="form-control" id="exampleInputEmail1" required
+          aria-describedby="emailHelp" ngModel>
+        <span style="color: red;" *ngIf='emailInp.invalid && emailInp.touched'>**please Enter email in proper
+          format</span>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input #passInp='ngModel' name="passInp" type="password" class="form-control" required
+          id="exampleInputPassword1" ngModel>
+        <span style="color: red;" *ngIf='passInp.invalid && passInp.touched'>**please Enter password in proper
+          format</span>
+      </div>
+      <button type="submit" [disabled]='regForm.invalid' class="btn btn-primary">Login </button>
+    </form>
+  </div>
+  <br>
+  <button class="btn btn-danger" (click)=clearDB()>ClearLocalDB</button>
+</div>
+<router-outlet></router-outlet>

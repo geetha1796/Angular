@@ -1,0 +1,15 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let p of person'>
+        <td>{{p.name}}</td>
+        <td>{{p.age}}</td>
+        <td>{{p.department}}</td>
+    </tbody>
+  </table>
